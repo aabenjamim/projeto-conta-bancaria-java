@@ -24,22 +24,28 @@ public class TelaInicial {
         System.out.print("DIGITE O CODIGO DA OPÇÃO SELECIONADA: ");
 
         int operacao = entrada.nextInt();
+        int numero;
+        String cpf;
 
         switch(operacao) {
             case 1:
                 System.out.println("DIGITE O NÚMERO DA CONTA: ");
-                int numero = entrada.nextInt();
+                numero = entrada.nextInt();
                 System.out.println("DIGITE O NÚMERO DO CPF: ");
-                String cpf = entrada.next();
+                cpf = entrada.next();
                 System.out.println("DIGITE A DATA DE ANIVERSARIO DA CONTA: ");
                 int diaAniversarioPoupanca = entrada.nextInt();
 
                 ContaPoupanca cp = new ContaPoupanca(numero, cpf, diaAniversarioPoupanca);
                 cp.visualizar();
-
                 break;
             case 2:
-                //
+                System.out.println("DIGITE O NÚMERO DA CONTA: ");
+                numero = entrada.nextInt();
+                System.out.println("DIGITE O NÚMERO DO CPF: ");
+                cpf = entrada.next();
+                ContaCorrente cc = new ContaCorrente(numero, cpf);
+                cc.visualizar();
                 break;
             case 3:
                 //
