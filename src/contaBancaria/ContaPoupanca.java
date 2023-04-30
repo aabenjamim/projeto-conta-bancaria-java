@@ -13,7 +13,7 @@ public class ContaPoupanca extends Conta{
     public void correcao(){
         if (LocalDate.now().getDayOfMonth() == diaAniversarioPoupanca) {
             double correcao = getSaldo() * 0.0005;
-            credito(correcao);
+            super.credito(correcao);
             System.out.println("Correção de 0,05% aplicada. Saldo atual: " + getSaldo());
         }
     }

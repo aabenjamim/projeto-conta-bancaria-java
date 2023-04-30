@@ -21,7 +21,7 @@ public class ContaEmpresa extends Conta {
         }
 
         emprestimoEmpresa += valor;
-        credito(valor);
+        super.credito(valor);
     }
     
     @Override
@@ -35,11 +35,11 @@ public class ContaEmpresa extends Conta {
             emprestimoEmpresa += saldo;
             debito(saldo);
         }
-        debito(valor);
+        super.debito(valor);
     }
 
     @Override
     public void credito(double valor) {
-        credito(valor);
+        super.credito(valor);
     }
 }

@@ -17,7 +17,7 @@ public class ContaCorrente extends Conta {
         }
 
         if (contadorTalao > 0) {
-            debito(30);;
+            super.debito(30);
             contadorTalao--;
         } else {
             System.out.println("Não é possível solicitar mais talões.");
@@ -32,7 +32,7 @@ public class ContaCorrente extends Conta {
             System.out.println("Não é possível realizar esta operação.");
             return;
         }
-        debito(valor);;
+        super.debito(valor);
     }
 
     @Override
@@ -42,6 +42,6 @@ public class ContaCorrente extends Conta {
             System.out.println("Não é possível realizar esta operação.");
             return;
         }
-        credito(valor);
+        super.credito(valor);
     }
 }

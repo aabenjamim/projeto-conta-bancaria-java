@@ -16,10 +16,10 @@ public class ContaEspecial extends Conta {
     
         if (diferenca <= limite) {
             if (novoSaldo < 0) {
-                debito(getSaldo());
+                super.debito(getSaldo());
                 limite -= saldo;
             } else {
-                credito(novoSaldo);
+                super.credito(novoSaldo);
                 limite -= valor;
             }
         } else {

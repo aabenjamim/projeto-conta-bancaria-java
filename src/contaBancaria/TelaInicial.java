@@ -6,66 +6,75 @@ public class TelaInicial {
 
     public static void main(String[] args) {
 
-    Scanner entrada = new Scanner(System.in);
+        Scanner entrada = new Scanner(System.in);
 
-    int opcao;
+        int opcao;
+        String cpf;
+        int numero;
+        int diaAniversarioPoupanca;
 
-    System.out.println("BANCO AMARELO");
-    System.out.println("SEU DINHEIRO BEM CUIDADO");
-    System.out.println("_ _ _ _ _ _ _ _ _ _ _ _ _ _ ");
-    System.out.println("1 - CONTA POUPANÇA");
-    System.out.println("2 - CONTA CORRENTE");
-    System.out.println("3 - CONTA ESPECIAL");
-    System.out.println("4 - CONTA EMPRESA");
-    System.out.println("5 - CONTA ESTUDANTIL");
-    System.out.println("6 - SAIR");
-    System.out.println("_ _ _ _ _ _ _ _ _ _ _ _ _ _ ");
-    System.out.print("DIGITE O CODIGO DA OPÇÃO SELECIONADA: ");
+        System.out.println("BANCO AMARELO");
+        System.out.println("SEU DINHEIRO BEM CUIDADO");
+        System.out.println("_ _ _ _ _ _ _ _ _ _ _ _ _ _ ");
+        System.out.println("1 - CONTA POUPANÇA");
+        System.out.println("2 - CONTA CORRENTE");
+        System.out.println("3 - CONTA ESPECIAL");
+        System.out.println("4 - CONTA EMPRESA");
+        System.out.println("5 - CONTA ESTUDANTIL");
+        System.out.println("6 - SAIR");
+        System.out.println("_ _ _ _ _ _ _ _ _ _ _ _ _ _ ");
+        System.out.print("DIGITE O CODIGO DA OPÇÃO SELECIONADA: ");
 
-    opcao = entrada.nextInt();
+        opcao = entrada.nextInt();
 
-    if(opcao == 1){
-       // Conta novaConta = new ContaPoupanca();
-    }
+        if (opcao == 1) {
+            System.out.print("DIGITE O NÚMERO DA CONTA: ");
+            numero = entrada.nextInt();
+            entrada.nextLine();
+            System.out.print("DIGITE O CPF DO TITULAR: ");
+            cpf = entrada.nextLine();
+            System.out.print("DIGITE O DIA DE ANIVERSÁRIO DA CONTA: ");
+            diaAniversarioPoupanca = entrada.nextInt();
+            Conta conta = new ContaPoupanca(numero, cpf, diaAniversarioPoupanca);
+            System.out.println("CONTA CRIADA COM SUCESSO!");
+        } else if (opcao == 2) {
+            System.out.print("DIGITE O NÚMERO DA CONTA: ");
+            numero = entrada.nextInt();
+            entrada.nextLine();
+            System.out.print("DIGITE O CPF DO TITULAR: ");
+            cpf = entrada.nextLine();
+            Conta conta = new ContaCorrente(numero, cpf);
+            System.out.println("CONTA CRIADA COM SUCESSO!");
+        } else if (opcao == 3) {
+            System.out.print("DIGITE O NÚMERO DA CONTA: ");
+            numero = entrada.nextInt();
+            entrada.nextLine();
+            System.out.print("DIGITE O CPF DO TITULAR: ");
+            cpf = entrada.nextLine();
+            Conta conta = new ContaEspecial(numero, cpf);
+            System.out.println("CONTA CRIADA COM SUCESSO!");
+        } else if (opcao == 4) {
+            System.out.print("DIGITE O NÚMERO DA CONTA: ");
+            numero = entrada.nextInt();
+            entrada.nextLine();
+            System.out.print("DIGITE O CPF DO TITULAR: ");
+            cpf = entrada.nextLine();
+            Conta conta = new ContaEmpresa(numero, cpf);
+            System.out.println("CONTA CRIADA COM SUCESSO!");
+        } else if (opcao == 5){
+            System.out.print("DIGITE O NÚMERO DA CONTA: ");
+            numero = entrada.nextInt();
+            System.out.print("DIGITE O CPF DO TITULAR: ");
+            cpf = entrada.nextLine();
+            Conta conta = new ContaEstudantil(numero, cpf);
+            System.out.println("CONTA CRIADA COM SUCESSO!");
+        } else if(opcao == 6){
+            return;
+        } else{
+            System.out.println("Opção inválida!");
+        }
 
     entrada.close();
 
-/*
-do {
-    System.out.println("[NOME DO BANCO]");
-    System.out.println("[SLOGAN]");
-    System.out.println(" ");
-    System.out.println("1 - CONTA POUPANÇA");
-    System.out.println("2 - CONTA CORRENTE");
-    System.out.println("3 - CONTA ESPECIAL");
-    System.out.println("4 - CONTA EMPRESA");
-    System.out.println("5 - CONTA ESTUDANTIL");
-    System.out.println("6 - SAIR");
-    System.out.print("DIGITE O CODIGO DA OPÇÃO SELECIONADA: ");
-    opcao = scanner.nextInt();
-    switch(opcao) {
-        case 1:
-            // Seleciona conta poupança
-            break;
-        case 2:
-            // Seleciona conta corrente
-            break;
-        case 3:
-            // Seleciona conta especial
-            break;
-        case 4:
-            // Seleciona conta empresa
-            break;
-        case 5:
-            // Seleciona conta estudantil
-            break;
-        case 6:
-            // Sai do programa
-            break;
-        default:
-            System.out.println("Opção inválida!");
     }
-} while(opcao != 6);*/
-    }
-
 }

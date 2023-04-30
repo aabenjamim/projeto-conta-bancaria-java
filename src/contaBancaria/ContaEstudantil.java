@@ -13,7 +13,7 @@ public class ContaEstudantil extends Conta {
             System.out.println("Não é possível realizar esta operação.");
             return;
         }
-        credito(valor);
+        super.credito(valor);
         limiteEstudantil -= valor;
     }
     
@@ -22,18 +22,18 @@ public class ContaEstudantil extends Conta {
         double saldo = getSaldo();
         if (saldo - valor < 0 || saldo - valor >= -limiteEstudantil) {
             limiteEstudantil += saldo - valor;
-            debito(saldo);
+            super.debito(saldo);
         } else if (saldo - valor < -limiteEstudantil) {
             System.out.println("Não é possível realizar esta operação.");
             return;
         } else {
-            debito(valor);
+            super.debito(valor);
         }
     }
 
     @Override
     public void credito(double valor) {
-        credito(valor);
+        super.credito(valor);
     }
 }
 
