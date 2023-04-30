@@ -82,6 +82,4 @@ public class TelaInicial {
         }
 
     }
-
-/*entrada.close();*/
 }
