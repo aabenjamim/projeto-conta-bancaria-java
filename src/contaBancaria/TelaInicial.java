@@ -56,7 +56,12 @@ public class TelaInicial {
                 ce.visualizar();
                 break;
             case 4:
-                //
+                System.out.println("DIGITE O NÚMERO DA CONTA: ");
+                numero = entrada.nextInt();
+                System.out.println("DIGITE O NÚMERO DO CPF: ");
+                cpf = entrada.next();      
+                ContaEmpresa cem = new ContaEmpresa(numero, cpf);
+                cem.visualizar();
                 break;
             case 5:
                 //
