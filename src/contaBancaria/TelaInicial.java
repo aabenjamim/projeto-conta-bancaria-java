@@ -28,6 +28,8 @@ public class TelaInicial {
        // Conta novaConta = new ContaPoupanca();
     }
 
+    entrada.close();
+
 /*
 do {
     System.out.println("[NOME DO BANCO]");
