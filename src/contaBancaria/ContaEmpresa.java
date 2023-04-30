@@ -11,7 +11,6 @@ public class ContaEmpresa extends Conta {
     }
     
     public void pedirEmprestimo(double valor) {
-        double saldo = getSaldo();
         if (emprestimoEmpresa + valor > 10000) {
             System.out.println("Não é possível solicitar este valor de empréstimo.");
             return;
@@ -22,7 +21,7 @@ public class ContaEmpresa extends Conta {
         }
 
         emprestimoEmpresa += valor;
-        saldo += valor;
+        credito(valor);
     }
     
     @Override
