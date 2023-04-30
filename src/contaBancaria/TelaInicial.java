@@ -4,11 +4,65 @@ import java.util.Scanner;
 
 public class TelaInicial {
 
+    static Scanner entrada = new Scanner(System.in);
+
     public static void main(String[] args) {
+       operacoes();
+    }
 
-        Scanner entrada = new Scanner(System.in);
+    public static void operacoes() {
+        System.out.println("BANCO AMARELO");
+        System.out.println("SEU DINHEIRO BEM CUIDADO");
+        System.out.println("_ _ _ _ _ _ _ _ _ _ _ _ _ _ ");
+        System.out.println("1 - CONTA POUPANÇA");
+        System.out.println("2 - CONTA CORRENTE");
+        System.out.println("3 - CONTA ESPECIAL");
+        System.out.println("4 - CONTA EMPRESA");
+        System.out.println("5 - CONTA ESTUDANTIL");
+        System.out.println("6 - SAIR");
+        System.out.println("_ _ _ _ _ _ _ _ _ _ _ _ _ _ ");
+        System.out.print("DIGITE O CODIGO DA OPÇÃO SELECIONADA: ");
 
-        int opcao;
+        int operacao = entrada.nextInt();
+
+        switch(operacao) {
+            case 1:
+                System.out.println("DIGITE O NÚMERO DA CONTA: ");
+                int numero = entrada.nextInt();
+                System.out.println("DIGITE O NÚMERO DO CPF: ");
+                String cpf = entrada.next();
+                System.out.println("DIGITE A DATA DE ANIVERSARIO DA CONTA: ");
+                int diaAniversarioPoupanca = entrada.nextInt();
+
+                ContaPoupanca cp = new ContaPoupanca(numero, cpf, diaAniversarioPoupanca);
+                cp.visualizar();
+
+                break;
+            case 2:
+                //
+                break;
+            case 3:
+                //
+                break;
+            case 4:
+                //
+                break;
+            case 5:
+                //
+                break;
+            case 6:
+                System.out.println("OBRIGADA POR ESCOLHER NOSSO BANCO!");
+                System.exit(0);
+                break;
+            default:
+                System.out.println("OPÇÃO INVÁLIDA");
+                operacoes();
+                break;
+        }
+
+    }
+
+/*int opcao;
         String cpf;
         int numero;
         int diaAniversarioPoupanca;
@@ -74,7 +128,5 @@ public class TelaInicial {
             System.out.println("Opção inválida!");
         }
 
-    entrada.close();
-
-    }
+    entrada.close();*/
 }
